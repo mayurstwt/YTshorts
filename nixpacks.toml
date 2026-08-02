@@ -1,2 +1,11 @@
 [phases.setup]
 nixPkgs = ["nodejs_20", "ffmpeg", "yt-dlp"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["NODE_OPTIONS='--max-old-space-size=512' npm run build"]
+
+[start]
+cmd = "npm start"
